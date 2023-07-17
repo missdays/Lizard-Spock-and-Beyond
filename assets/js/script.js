@@ -25,9 +25,6 @@ function playGame(selectedGameOption){
         spock : ['scissors', 'rock']
     };
 
-    let playerScore = parseInt(document.getElementById('player-score').innerText);
-    let botScore = parseInt(document.getElementById('bot-score').innerText);
-
     //will store the result from computerPlay
     let computerOption = computerPlay();
     document.getElementById("bot-play").innerText=computerOption;
@@ -40,16 +37,28 @@ function playGame(selectedGameOption){
     } else {
        botScores();
     }
+
+    //increment round numbers
+    let roundNumber = parseInt(document.getElementById('round-number').innerText);
+    //verify if round number is equal to 6
+    if (roundNumber === 6){
+        endGame();
+    } else {
+        document.getElementById("round-number").innerText = ++roundNumber;
+    }
+
 }
 
 function playerScores(){
-    //tell player s/he wins    
+    //tell player s/he wins  
+    let playerScore = parseInt(document.getElementById('player-score').innerText);  
     document.getElementById("winner").innerText="You win!";
     document.getElementById("player-score").innerText = ++playerScore;
 }
 
 function botScores(){
     //tells player bot wins
+    let botScore = parseInt(document.getElementById('bot-score').innerText);
     document.getElementById("winner").innerText="Bot wins!";
     document.getElementById("bot-score").innerText = ++botScore;
 }
@@ -65,3 +74,18 @@ function computerPlay(){
 
     return option;
 }
+
+//end game function 
+function endGame(){
+    let finalPlayerScore = parseInt(document.getElementById("player-score").innerText);
+    let finalBotScore = parseInt(document.getElementById("bot-score").innerText);
+
+    if(finalPlayerScore === finalBotScore){
+        alert("Final Game Result: DRAW!")
+    } else if (finalPlayerScore > finalBotScore){
+        alert("Final Game Result: YOU WIN!")
+    } else {
+        alert("Final Game Result: YOU LOSE!")
+    }
+}
+
