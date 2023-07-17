@@ -87,5 +87,12 @@ function endGame(){
     } else {
         alert("Final Game Result: YOU LOSE!")
     }
+    resetGame();
 }
 
+//reset the game
+function resetGame(){
+    document.getElementById("round-number").innerText = "1";
+    document.getElementById("bot-score").innerText = "0";
+    document.getElementById("player-score").innerText = "0";
+}
