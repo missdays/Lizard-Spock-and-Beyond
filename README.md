@@ -17,6 +17,7 @@ The game follows the rules popularized by the TV show "The Big Bang Theory":
 - Rock crushes Scissors
 
 ## How to Play
+![Overall look of the game](assets/images/readme3.png)
 
 1. Open the game link in your web browser.
 2. Set the game mode to Easy, Medium or Hard or leave it on Automatic.
@@ -26,6 +27,15 @@ The game follows the rules popularized by the TV show "The Big Bang Theory":
 6. The result of the game will be displayed on the screen, indicating whether you win, lose, or it's a draw.
 7. Once you select the difficulty mode, you will not be able to change it until the game finishes or you press "retry".
 8. Play again by clicking retry or refresh the page.
+
+
+## Features Left to Implement 
+1. Add hand gesture images to represent bot play.
+2. Add sound effects
+
+## Testing 
+- I tested that this page works in different browsers: Chrome, Safari.
+- I confirm that this website is funcional and responsive.
 
 ## Validator Testing
 - Accessibility: I confirm that the colours and fonts chosen are accessible for running it through lighthouse in devtools.

@@ -74,8 +74,8 @@ function botScores(){
 
 // Automatic gameOptionsEasy gameOptionsMedium gameOptionsHard
 function computerPlay(){
-     //Easy Level
-     let gameOptions = ['rock', 'paper'];
+    //Easy Level
+    let gameOptions = ['rock', 'paper'];
 
     let level = getDifficultyLevel();
     if(level === "auto"){
@@ -103,7 +103,6 @@ function computerPlay(){
     //Creates a random number according to gameOptions difficulty Level
     let index = Math.floor(Math.random()* gameOptions.length);
     let option = gameOptions[index];
-
     return option;
 }
 
