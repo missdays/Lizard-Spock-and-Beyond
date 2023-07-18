@@ -1,11 +1,25 @@
 body{
     font-family: 'VT323', monospace;
     text-align: center;
+    background-color:aliceblue;
 }
 
 #title{
     font-size: 70px;
 }
+
+#difficulty-level{
+    font-family: 'VT323', monospace;
+    color: darkslategray;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    
+  }
+
+.mode-style{
+    font-size: large;
+}  
 
 .bot-win-style{
     font-size: 22px ;
@@ -81,6 +95,8 @@ body{
     .game-button {
         width: 60px;
         height: 60px; 
+        margin-left:2.5px;
+        margin-right:2.5px;
     }
     .button-image{
         width: 50px;

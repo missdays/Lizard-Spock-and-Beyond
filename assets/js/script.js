@@ -69,21 +69,30 @@ function botScores(){
     document.getElementById("bot-score").innerText = ++botScore;
 }
 
-//gameOptionsEasy gameOptionsMedium gameOptionsHard
+// Automatic gameOptionsEasy gameOptionsMedium gameOptionsHard
 function computerPlay(){
-    //get the round number to set level of difficulty
-    let roundNumber = parseInt(document.getElementById("round-number").innerText);
+     //Easy Level
+     let gameOptions = ['rock', 'paper'];
 
-    //Easy Level
-    let gameOptions = ['rock', 'paper'];
+    let level = getDifficultyLevel();
+    if(level === "auto"){
+        //get the round number to set level of difficulty
+        let roundNumber = parseInt(document.getElementById("round-number").innerText);
+        
+        //Medium Level: computer will be able to choose 3 options: rock, paper, scissors
+        if (roundNumber > 2){
+            gameOptions.push('scissors');
+        }
 
-    //Medium Level: computer will be able to choose 3 options: rock, paper, scissors
-    if (roundNumber > 2){
+        //Hard Level: computer will be able to choose ALL options
+        if (roundNumber > 4){
+            gameOptions.push('lizard');
+            gameOptions.push('spock');
+        }
+    } else if( level === "medium"){
         gameOptions.push('scissors');
-    }
-
-    //Hard Level: computer will be able to choose ALL options
-    if (roundNumber > 4){
+    } else if (level ==="hard"){
+        gameOptions.push('scissors');
         gameOptions.push('lizard');
         gameOptions.push('spock');
     }
@@ -94,6 +103,14 @@ function computerPlay(){
 
     return option;
 }
+
+//Difficulty Level Select Option
+function getDifficultyLevel() {
+    let selectElement = document.getElementById("difficulty-level");
+    let selectedIndex = selectElement.selectedIndex;
+    let selectedOption = selectElement.options[selectedIndex].value;
+    return selectedOption;
+  }
 
 //end game function 
 function endGame(){
@@ -115,4 +132,6 @@ function resetGame(){
     document.getElementById("round-number").innerText = "1";
     document.getElementById("bot-score").innerText = "0";
     document.getElementById("player-score").innerText = "0";
+    document.getElementById("winner").innerText = "";
+    document.getElementById("bot-play").innerText="";
 }
