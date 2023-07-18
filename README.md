@@ -31,7 +31,7 @@ The game follows the rules popularized by the TV show "The Big Bang Theory":
 - Accessibility: I confirm that the colours and fonts chosen are accessible for running it through lighthouse in devtools.
 - HTML: No errors were returned when passing through the official W3C validator
 - CSS: No errors were returned when passing through the official (Jigsaw) validator
-![Hand Gestures](assets/images/readme2.png)
+![Hand Gestures](assets/images/readme1.png)
 
 ## Bugs
 - No bugs
