@@ -6,16 +6,16 @@ This is a web-based implementation of the Rock Paper Scissors Lizard Spock game 
 ## Game Rules
 
 The game follows the rules popularized by the TV show "The Big Bang Theory":
-- Scissors cuts Paper
-- Paper covers Rock
-- Rock crushes Lizard
-- Lizard poisons Spock
-- Spock smashes Scissors
-- Scissors decapitate Lizard
-- Lizard eats Paper
-- Paper disproves Spock
-- Spock vaporizes Rock
-- Rock crushes Scissors
+- Scissors cuts Paper,
+- Paper covers Rock,
+- Rock crushes Lizard,
+- Lizard poisons Spock,
+- Spock smashes Scissors,
+- Scissors decapitate Lizard,
+- Lizard eats Paper,
+- Paper disproves Spock,
+- Spock vaporizes Rock,
+- Rock crushes Scissors,
 
 ## How to Play
 ![Overall look of the game](assets/images/readme3.png)
@@ -36,12 +36,12 @@ The game follows the rules popularized by the TV show "The Big Bang Theory":
 
 ## Testing 
 - I tested that this page works in different browsers: Chrome, Safari.
-- I confirm that this website is funcional and responsive.
+- I confirm that this website is functional and responsive.
 
 ## Validator Testing
 - Accessibility: I confirm that the colours and fonts chosen are accessible for running it through lighthouse in devtools.
-- HTML: No errors were returned when passing through the official W3C validator
-- CSS: No errors were returned when passing through the official (Jigsaw) validator
+- HTML: No errors were returned when passing through the official W3C validator.
+- CSS: No errors were returned when passing through the official (Jigsaw) validator.
 ![Hand Gestures](assets/images/readme1.png)
 
 ## Bugs
@@ -49,9 +49,9 @@ The game follows the rules popularized by the TV show "The Big Bang Theory":
 
 ## Deployment 
 The website was deployed to GitHub pages. The steps to deploy are as follows:
-- In the GitHub repo, navigate to the Settings tab,
-- From the source section drop-down menu, select the Master Branch,
-- Once the Master Branch has beeen selected, the page provided the link to the completed website.
+- In the GitHub repo, navigate to the Settings tab, select Pages,
+- From the source section drop-down menu, select the Master/Main Branch,
+- Once the Master/Main Branch has beeen selected, the page provided the link to the completed website.
 
 ## Credits
 - This game is based on the original Rock Paper Scissors Lizard Spock game popularised by "The Big Bang Theory" TV show.

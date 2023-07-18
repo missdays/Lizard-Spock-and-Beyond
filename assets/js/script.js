@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     //this will add event listener to buttons
     let buttonElements = document.getElementsByTagName("button");
 
     for (let button of buttonElements) {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             //Retry button to reset the game
             if (this.getAttribute("data-type") === "retry") {
                 resetGame();
@@ -16,38 +16,38 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //Game starter
-function playGame(selectedGameOption){
+function playGame(selectedGameOption) {
 
     //disable level dropdown when game is started
     getLevelField().disabled = true;
 
     // contains data of who will defeat the other
     let defeatedBy = {
-        rock : ['scissors', 'lizard'],
-        paper : ['rock', 'spock'],
-        scissors : ['paper', 'lizard'],
-        lizard : ['paper', 'spock'],
-        spock : ['scissors', 'rock']
+        rock: ['scissors', 'lizard'],
+        paper: ['rock', 'spock'],
+        scissors: ['paper', 'lizard'],
+        lizard: ['paper', 'spock'],
+        spock: ['scissors', 'rock']
     };
 
     //will store the bot choice
     let computerOption = computerPlay();
     getBotChoiceField().innerText = computerOption;
-    
+
     //check if it's a draw
-    if (computerOption === selectedGameOption){
+    if (computerOption === selectedGameOption) {
         draw();
-    }else if(defeatedBy[selectedGameOption].includes(computerOption)) {
+    } else if (defeatedBy[selectedGameOption].includes(computerOption)) {
         playerScores();
     } else {
-       botScores();
+        botScores();
     }
 
     //get round number
     let roundNumber = parseInt(getRoundField().innerText);
-    
+
     //verify if last round was reached
-    if (roundNumber === 6){
+    if (roundNumber === 6) {
         endGame();
     } else {
         //increments the round number
@@ -55,26 +55,26 @@ function playGame(selectedGameOption){
     }
 }
 
-function draw(){
+function draw() {
     let drawText = getWinnerField();
-    drawText.innerText ="Draw!";
+    drawText.innerText = "Draw!";
     drawText.style.backgroundColor = "#fade8f";
 }
 
-function playerScores(){
+function playerScores() {
     //increase player score 
     let playerScoreField = getPlayerScoreField();
-    let playerScore = parseInt(playerScoreField.innerText); 
+    let playerScore = parseInt(playerScoreField.innerText);
     playerScoreField.innerText = ++playerScore;
 
     //tell player s/he wins
     let playerWinText = getWinnerField();
     playerWinText.innerText = "You win!";
     playerWinText.style.backgroundColor = "#9dd882";
-    
+
 }
 
-function botScores(){
+function botScores() {
     //increase bot score
     let botScoreField = getBotScoreField();
     let botScore = parseInt(botScoreField.innerText);
@@ -82,33 +82,33 @@ function botScores(){
 
     //tells player bot wins
     let botWinText = getWinnerField();
-    botWinText.innerText="Bot wins!";
+    botWinText.innerText = "Bot wins!";
     botWinText.style.backgroundColor = "#f5918a";
 }
 
-function computerPlay(){
+function computerPlay() {
     //Easy Level options
     let gameOptions = ['rock', 'paper'];
 
     let level = getDifficultyLevel();
 
-    if(level === "auto"){
+    if (level === "auto") {
         //get the round number to set level of difficulty
         let roundNumber = parseInt(getRoundField().innerText);
-        
+
         //Medium Level: computer will be able to choose 3 options: rock, paper, scissors
-        if (roundNumber > 2){
+        if (roundNumber > 2) {
             gameOptions.push('scissors');
         }
 
         //Hard Level: computer will be able to choose ALL options
-        if (roundNumber > 4){
+        if (roundNumber > 4) {
             gameOptions.push('lizard');
             gameOptions.push('spock');
         }
-    } else if( level === "medium"){
+    } else if (level === "medium") {
         gameOptions.push('scissors');
-    } else if (level === "hard"){
+    } else if (level === "hard") {
         gameOptions.push('scissors');
         gameOptions.push('lizard');
         gameOptions.push('spock');
@@ -126,55 +126,73 @@ function getDifficultyLevel() {
     let selectedIndex = selectElement.selectedIndex;
     let selectedOption = selectElement.options[selectedIndex].value;
     return selectedOption;
-  }
+}
 
 //end game function 
-function endGame(){
+function endGame() {
     let finalPlayerScore = parseInt(getPlayerScoreField().innerText);
     let finalBotScore = parseInt(getBotScoreField().innerText);
 
-    if(finalPlayerScore === finalBotScore){
-        alert("Final Game Result: DRAW!")
-    } else if (finalPlayerScore > finalBotScore){
-        alert("Final Game Result: YOU WIN!")
+    let winnerField = getWinnerField();
+
+    if (finalPlayerScore === finalBotScore) {
+        winnerField.innerHTML = "Final Game Result: DRAW!";
+        winnerField.style.backgroundColor = "#fade8f";
+    } else if (finalPlayerScore > finalBotScore) {
+        winnerField.innerHTML = "CONGRATULATIONS! YOU WIN!";
+        winnerField.style.backgroundColor = "#9dd882";
     } else {
-        alert("Final Game Result: YOU LOSE!")
+        winnerField.innerHTML = "Final Game Result: YOU LOSE!";
+        winnerField.style.backgroundColor = "#f5918a"
     }
-    resetGame();
+
+    let buttonElements = document.getElementsByClassName("game-button");
+
+    for (let button of buttonElements) {
+        button.disabled = true;
+        button.style.opacity = "0.1";
+    }
 }
 
 //reset the game
-function resetGame(){
+function resetGame() {
     getRoundField().innerText = "1";
     getBotScoreField().innerText = "0";
     getPlayerScoreField().innerText = "0";
     getWinnerField().innerText = "";
-    getBotChoiceField().innerText="";
+    getBotChoiceField().innerText = "";
     getLevelField().disabled = false;
+
+    let buttonElements = document.getElementsByClassName("game-button");
+
+    for (let button of buttonElements) {
+        button.disabled = false;
+        button.style.opacity = "1";
+    }
 }
 
 //get fields
 
-function getPlayerScoreField(){
+function getPlayerScoreField() {
     return document.getElementById("player-score");
 }
 
-function getRoundField(){
+function getRoundField() {
     return document.getElementById("round-number");
 }
 
-function getWinnerField(){
+function getWinnerField() {
     return document.getElementById("winner");
 }
 
-function getBotScoreField(){
+function getBotScoreField() {
     return document.getElementById("bot-score");
 }
 
-function getBotChoiceField(){
+function getBotChoiceField() {
     return document.getElementById("bot-play");
 }
 
-function getLevelField(){
+function getLevelField() {
     return document.getElementById("difficulty-level");
 }
