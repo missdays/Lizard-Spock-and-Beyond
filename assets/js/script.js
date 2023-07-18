@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function playGame(selectedGameOption){
+
+    document.getElementById("difficulty-level").disabled = true;
+
     // contains data of who will defeat the other
     let defeatedBy = {
         rock : ['scissors', 'lizard'],
@@ -134,4 +137,5 @@ function resetGame(){
     document.getElementById("player-score").innerText = "0";
     document.getElementById("winner").innerText = "";
     document.getElementById("bot-play").innerText="";
+    document.getElementById("difficulty-level").disabled = false;
 }
