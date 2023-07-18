@@ -31,7 +31,9 @@ function playGame(selectedGameOption){
     
     //check if it's a draw
     if (computerOption ===selectedGameOption){
-        document.getElementById("winner").innerText="Draw!";
+        let drawText = document.getElementById("winner");
+        drawText.innerText="Draw!";
+        drawText.style.backgroundColor = "#fade8f";
     }else if(defeatedBy[selectedGameOption].includes(computerOption)) {
         playerScores();
     } else {
@@ -51,15 +53,19 @@ function playGame(selectedGameOption){
 
 function playerScores(){
     //tell player s/he wins  
-    let playerScore = parseInt(document.getElementById('player-score').innerText);  
-    document.getElementById("winner").innerText="You win!";
+    let playerScore = parseInt(document.getElementById('player-score').innerText); 
+    let playerWinText =  document.getElementById("winner");
+    playerWinText.innerText="You win!";
+    playerWinText.style.backgroundColor = "#9dd882";
     document.getElementById("player-score").innerText = ++playerScore;
 }
 
 function botScores(){
     //tells player bot wins
     let botScore = parseInt(document.getElementById('bot-score').innerText);
-    document.getElementById("winner").innerText="Bot wins!";
+    let botWinText = document.getElementById("winner");
+    botWinText.innerText="Bot wins!";
+    botWinText.style.backgroundColor = "#f5918a";
     document.getElementById("bot-score").innerText = ++botScore;
 }
 

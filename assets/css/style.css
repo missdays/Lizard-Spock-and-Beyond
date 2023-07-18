@@ -7,6 +7,10 @@ body{
     font-size: 70px;
 }
 
+.bot-win-style{
+    font-size: 22px ;
+}
+
 .game-button{
     width: 120px;
     height: 120px;
@@ -45,15 +49,25 @@ body{
     border-width: 5px;
 }
 
+.your-score-style{
+    font-size: 20px ;
+    color: darkcyan; 
+}
+.bot-score-style{
+    font-size: 20px ;
+    color: darkgoldenrod;
+}
+
 .retry-btn{
-    width: 80px;
-    height: 50px;
+    width: 70px;
+    height: 40px;
     font-family:'VT323', monospace;
     font-size: large;
     margin-top: 50px;
     background-color: lightpink;
     border-width: 2px;
 }
+
 @media (max-width: 500px) {
     #title {
         font-size: 45px;
@@ -62,11 +76,11 @@ body{
 
 @media (max-width: 300px) {
     #title {
-        font-size: 20px;
+        font-size: 25px;
     }
     .game-button {
         width: 60px;
-        height: 60px;
+        height: 60px; 
     }
     .button-image{
         width: 50px;
@@ -74,11 +88,20 @@ body{
     }
 
     h1{
-        font-size: 20px;
+        font-size: 15px;
     }
     .retry-btn{
         width: 40px;
         height: 25px;
         font-size: small;
+    }
+    .bot-win-style{
+        font-size: 11px ;
+    }
+    .your-score-style{
+        font-size: 10px ;
+    }
+    .bot-score-style{
+        font-size: 10px ;
     }
 }
