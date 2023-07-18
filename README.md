@@ -3,6 +3,8 @@
 
 This is a web-based implementation of the Rock Paper Scissors Lizard Spock game using HTML, CSS, and JavaScript.
 
+![Overall look of the game on different devices](assets/images/readme4.png)
+
 ## Game Rules
 
 The game follows the rules popularized by the TV show "The Big Bang Theory":
@@ -56,4 +58,5 @@ The website was deployed to GitHub pages. The steps to deploy are as follows:
 ## Credits
 - This game is based on the original Rock Paper Scissors Lizard Spock game popularised by "The Big Bang Theory" TV show.
 - The source of the images is from JLChamberlain on Github. 
+
 ![Hand Gestures](assets/images/readme2.png)
