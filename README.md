@@ -1,39 +1,48 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock Paper Scissors Lizard Spock Game
 
-Welcome,
+This is a web-based implementation of the Rock Paper Scissors Lizard Spock game using HTML, CSS, and JavaScript.
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Game Rules
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+The game follows the rules popularized by the TV show "The Big Bang Theory":
+- Scissors cuts Paper
+- Paper covers Rock
+- Rock crushes Lizard
+- Lizard poisons Spock
+- Spock smashes Scissors
+- Scissors decapitate Lizard
+- Lizard eats Paper
+- Paper disproves Spock
+- Spock vaporizes Rock
+- Rock crushes Scissors
 
-## Codeanywhere Reminders
+## How to Play
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+1. Open the game link in your web browser.
+2. Set the game mode to Easy, Medium or Hard or leave it on Automatic.
+3. Click on one of the buttons: Rock, Paper, Scissors, Lizard, or Spock.
+4. The computer will randomly choose its move.
+5. There is a limit of 6 rounds.
+6. The result of the game will be displayed on the screen, indicating whether you win, lose, or it's a draw.
+7. Once you select the difficulty mode, you will not be able to change it until the game finishes or you press "retry".
+8. Play again by clicking retry or refresh the page.
 
-`python3 -m http.server`
+## Validator Testing
+- Accessibility: I confirm that the colours and fonts chosen are accessible for running it through lighthouse in devtools.
+- HTML: No errors were returned when passing through the official W3C validator
+- CSS: No errors were returned when passing through the official (Jigsaw) validator
+![Hand Gestures](assets/images/readme2.png)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+## Bugs
+- No bugs
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## Deployment 
+The website was deployed to GitHub pages. The steps to deploy are as follows:
+- In the GitHub repo, navigate to the Settings tab,
+- From the source section drop-down menu, select the Master Branch,
+- Once the Master Branch has beeen selected, the page provided the link to the completed website.
 
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+## Credits
+- This game is based on the original Rock Paper Scissors Lizard Spock game popularised by "The Big Bang Theory" TV show.
+- The source of the images is from JLChamberlain on Github. 
+![Hand Gestures](assets/images/readme2.png)
