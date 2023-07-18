@@ -2,3 +2,39 @@ body{
     font-family: 'VT323', monospace;
     text-align: center;
 }
+
+.game-button{
+    width: 120px;
+    height: 120px;
+    margin-left:5px;
+    margin-right:5px;
+    background-color:transparent;
+    border-radius: 50%;
+    border-color: transparent;
+}
+
+.button-image{
+    width: 100px;
+    height: 100px;
+    
+}
+.rock-btn:hover{
+    border-color:lightgoldenrodyellow ;
+    border-width: 5px;
+}
+.paper-btn:hover{
+    border-color:lightseagreen ;
+    border-width: 5px;
+}
+.scissors-btn:hover{
+    border-color:lightcoral ;
+    border-width: 5px;
+}
+.lizard-btn:hover{
+    border-color:lightgreen ;
+    border-width: 5px;
+}
+.spock-btn:hover{
+    border-color:lightskyblue ;
+    border-width: 5px;
+}

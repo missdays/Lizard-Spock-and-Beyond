@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttonElements) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "retry") {
-                retry();
+                resetGame();
             } else {
                 let selectedGameOption = this.getAttribute("data-type");
                 playGame(selectedGameOption);
@@ -65,11 +65,25 @@ function botScores(){
 
 //gameOptionsEasy gameOptionsMedium gameOptionsHard
 function computerPlay(){
-    //computer will store options 
-    let gameOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+    //get the round number to set level of difficulty
+    let roundNumber = parseInt(document.getElementById("round-number").innerText);
 
-    //Creates a random number between 0 and 4
-    let index = Math.floor(Math.random() * 5);
+    //Easy Level
+    let gameOptions = ['rock', 'paper'];
+
+    //Medium Level: computer will be able to choose 3 options: rock, paper, scissors
+    if (roundNumber > 2){
+        gameOptions.push('scissors');
+    }
+
+    //Hard Level: computer will be able to choose ALL options
+    if (roundNumber > 4){
+        gameOptions.push('lizard');
+        gameOptions.push('spock');
+    }
+
+    //Creates a random number according to gameOptions difficulty Level
+    let index = Math.floor(Math.random()* gameOptions.length);
     let option = gameOptions[index];
 
     return option;
